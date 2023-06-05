@@ -1,0 +1,13 @@
+name: Build
+on: push
+jobs:
+  gradle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: run Gradle build
+        run: gradle build
